@@ -18,6 +18,8 @@ RUN pnpm run build
 # build backend
 FROM node:lts-alpine as backend
 
+RUN npm config set registry https://registry.npm.taobao.org/
+
 RUN npm install pnpm -g
 
 WORKDIR /app
